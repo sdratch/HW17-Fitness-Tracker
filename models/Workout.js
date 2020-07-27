@@ -9,15 +9,7 @@ const WorkoutSchema = new Schema({
     type: Date,
     default: Date.now,
   },
-  //second field is a reference to exercises
-  // exercises: [
-  //   {
-  //     type: Schema.Types.ObjectId,
-  //     ref: "Exercise",
-  //   },
-  // ],
-  exercises: [
-    {
+  exercises: [{
       type: {
         type: String,
         enum: ["resistance", "cardio"],
@@ -55,8 +47,7 @@ const WorkoutSchema = new Schema({
         type: Number,
         require: false,
       },
-    },
-  ],
+    }],
 });
 //set the model and export it
 const Workout = mongoose.model("Workout", WorkoutSchema);
