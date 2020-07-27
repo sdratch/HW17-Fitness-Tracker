@@ -9,5 +9,6 @@ It uses express to create the app
 It uses heroku to deploy the site and with the mLab plugin to host the database
 
 ## Links:
-*[Githup Repo](https://github.com/sdratch/HW17-Fitness-Tracker)
-*[Heroku deployed Link](https://fierce-temple-67077.herokuapp.com/)
+
+* [Githup Repo](https://github.com/sdratch/HW17-Fitness-Tracker)
+* [Heroku deployed Link](https://fierce-temple-67077.herokuapp.com/)
