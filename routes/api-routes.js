@@ -34,7 +34,7 @@ module.exports = function (app) {
   //post route for /api/workout
   app.post("/api/workouts", (req, res) => {
       //creates a new workout with an exercise
-    db.Workout.create({ exercises: [req.body] })
+    db.Workout.create({})
       .then((dbWorkout) => {
         res.json(dbWorkout);
       })
