@@ -1,6 +1,6 @@
 const db = require("../models");
 module.exports = function (app) {
-  //get /api/workouts
+  //get route for /api/workout
   app.get("/api/workouts", (req, res) => {
     db.Workout.find({})
       .then((dbWorkouts) => {
@@ -11,8 +11,9 @@ module.exports = function (app) {
       });
   });
 
-  //put /api/workout/:id
+  //put route for /api/workout/:id
   app.put("/api/workouts/:id", (req, res) => {
+      //finds the location of the workout and pushes a new exercise in
     db.Workout.findOneAndUpdate(
       { _id: req.params.id },
       {
@@ -30,8 +31,9 @@ module.exports = function (app) {
       });
   });
 
-  //post /api/workout
+  //post route for /api/workout
   app.post("/api/workouts", (req, res) => {
+      //creates a new workout with an exercise
     db.Workout.create({ exercises: [req.body] })
       .then((dbWorkout) => {
         res.json(dbWorkout);
@@ -41,7 +43,7 @@ module.exports = function (app) {
       });
   });
 
-  //get /api/workout/range
+  //get route for /api/workout/range
   app.get("/api/workouts/range", (req, res) => {
     db.Workout.find({})
       .then((dbWorkouts) => {
